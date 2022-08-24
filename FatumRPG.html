@@ -1,0 +1,243 @@
+<div class="kontener width-670">
+
+	<div class="blok1 width-440 height-90">
+
+		<div class="width-350 height-30 lewy plywanie">Miano <input class="width-250" type="text" name="attr_Miano"></div>
+	
+		<div class="height-30 lewy plywanie">
+		Rasa
+		<select class="width-130" name="attr_Rasa">
+			<option value="0" selected="selected"> </option>
+			<option value="1">człowiek</option>
+			<option value="2">półanioł</option>
+			<option value="3">półanioł olbrzmy</option>
+			<option value="4">lilita demoniczny</option>
+			<option value="5">lilita</option>
+		</select>
+		</div>
+
+		<div class="height-30 lewy plywanie">
+		Nosiciel
+		<select class="width-100" name="attr_Nosiciel">
+			<option value="0" selected="selected"> </option>
+			<option value="1">człowiek</option>
+			<option value="2">półanioł</option>
+		</select>
+		</div>
+
+	</div>
+
+	<div class="logo width-190"></div>	
+
+	<div class="blok1">
+		<div class="width-310 lewy">Wygląd i wiek</div>
+		<textarea name="attr_WygladWiek" class="width-300" placeholder="Wpisz szczegóły wyglądu i inne ważne cechy zewnętrzne."></textarea>
+	</div>
+
+	<div class="blok1">
+		<div class="width-310 lewy">Pieniądze, zasoby i majątek</div>
+		<textarea name="attr_PieniadzeZasobyMajatek" class="width-300" placeholder="Pieniądze, zasoby i majątek"></textarea>
+	</div>
+
+	<div class="blok1">
+		<div class="width-310 lewy">Przewagi</div>
+		<textarea name="attr_Przewagi" class="width-300" placeholder="Przewagi"></textarea>
+	</div>
+
+	<div class="blok1">
+		<div class="width-310 lewy">Zawady</div>
+		<textarea name="attr_Zawady" class="width-300" placeholder="Zawady"></textarea>
+	</div>
+	
+	<div class="blok1">
+		<div class="width-310 lewy">Ekwipunek</div>
+		<textarea name="attr_Ekwipunek" class="width-300" placeholder="Wszystko co nosisz ze sobą."></textarea>
+	</div>
+
+	<div class="blok1">
+		<div class="width-310 lewy">Stany</div>
+		<textarea name="attr_Stany" class="width-300" placeholder="Stany"></textarea>
+	</div>
+
+	<div class="blok1 width-200">
+	
+		<div class="plywanie2">
+			<div class="width-70 lewy">Fatum</div>
+			<input type="number" name="attr_Fatum" value="1" min="1" max="3">
+		</div>
+
+		<div class="plywanie2">
+		<div class="width-70 lewy">Pula losu</div>
+		<input type="number" name="attr_PulaLosu" value="1" min="0" max="20">
+		</div>
+		
+	</div>
+
+	<div class="blok1 width-400 height-120">
+		<div class="lewy">Rany</div>
+		<input type="radio" value="1" name="attr_Multiplier" ><span class="lewy">BRAK</span>
+		<input type="radio" value="2" name="attr_Multiplier" ><span class="lewy">LEKKA</span>
+		<input type="radio" value="3" name="attr_Multiplier" ><span class="lewy">ŚREDNIA</span>
+		<input type="radio" value="4" name="attr_Multiplier" ><span class="lewy">CIĘŻKA</span>
+		<input type="radio" value="5" name="attr_Multiplier" ><span class="lewy">KRYTYCZNA</span>
+		<div>
+			<div class="opis plywanie2">BRAK EFEKTU</div>
+			<div class="opis plywanie2">BRAK EFEKTU</div>
+			<div class="opis plywanie2">+1 DO RZUTU NAJLEPSZEJ KOŚCI</div>
+			<div class="opis plywanie2">+1 DO RZUTÓW WSZYSTKICH KOŚCI</div>
+			<div class="opis plywanie2">+2 DO RZUTÓW WSZYSTKICH KOŚCI</div>
+		</div>
+	</div>
+
+	<hr>
+
+<div class="atrybuty">
+
+	<div class=""><label>Atrybuty fizyczne</label></div>
+
+	<div class="">
+
+		<div>
+			<div class="cell width-45 centruj">Biegłość </div>
+			<input type="number" name="attr_BieFiz" value="0" min="0" max="5">
+		</div>
+	
+		<div class="linia">
+			<div class="cell width-40 centruj"><span>Poziom</span></div>
+			<div class="cell width-150 centruj"><span>Atrybut</span></div>
+			<div class="cell width-50 centruj"><span>Wprawa</span></div>
+		</div>
+
+		<fieldset class="repeating_AtrybutyFizyczne">
+
+		<div class="">
+			<input type="number" name="attr_AtrFizPoz" value="0" min="0" max="5">
+			<input class="width-150" type="text" name="attr_AtrFizNaz">
+			<input type="number" name="attr_AtrFizWpr" value="0" min="0" max="30">
+			<button type="roll" name="roll_TestowanieAtrybutuFizycznego" value="/roll (@{Fatum}+@{BieFiz}+@{AtrFizPoz}+?{Ile kości z PULI LOSU chcesz dodać do wykonywanego rzutu})d6<[[@{BieFiz}+@{AtrFizPoz}+?{Ile kości z PULI LOSU chcesz poświęcić, aby zwiększyć PRÓG}]]"></button>
+		</div>
+		<div class="">
+			<textarea class="width-240" name="attr_AtrFizSpec" placeholder="Specjalizacja"></textarea>
+		</div>
+
+		</fieldset>
+
+	</div>
+
+</div>
+
+<div class="atrybuty">
+
+	<div class=""><label>Atrybuty umysłowe</label></div>
+
+	<div class="">
+
+		<div>
+			<div class="cell width-45 centruj">Biegłość </div>
+			<input type="number" name="attr_BieUmy" value="0" min="0" max="5">
+		</div>
+	
+		<div class="linia">
+			<div class="cell width-40 centruj"><span>Poziom</span></div>
+			<div class="cell width-150 centruj"><span>Atrybut</span></div>
+			<div class="cell width-50 centruj"><span>Wprawa</span></div>
+		</div>
+
+		<fieldset class="repeating_AtrybutyUmyslowe">
+
+		<div class="">
+			<input type="number" name="attr_AtrUmyPoz" value="0" min="0" max="5">
+			<input class="width-150" type="text" name="attr_AtrUmyNaz">
+			<input type="number" name="attr_AtrUmyWpr" value="0" min="0" max="30">
+			<button type="roll" name="roll_TestowanieAtrybutuUmyslowego" value="/roll (@{Fatum}+@{BieUmy}+@{AtrUmyPoz}+?{Ile kości z PULI LOSU chcesz dodać do wykonywanego rzutu})d6<[[@{BieUmy}+@{AtrUmyPoz}+?{Ile kości z PULI LOSU chcesz poświęcić, aby zwiększyć PRÓG}]]"></button>
+		</div>
+		<div class="">
+			<textarea class="width-240" name="attr_AtrUmySpec" placeholder="Specjalizacja"></textarea>
+		</div>
+
+		</fieldset>
+
+	</div>
+
+</div>
+
+<div class="atrybuty">
+
+	<div class=""><label>Atrybuty społeczne</label></div>
+
+	<div class="">
+
+		<div>
+			<div class="cell width-45 centruj">Biegłość </div>
+			<input type="number" name="attr_BieSpo" value="0" min="0" max="5">
+		</div>
+	
+		<div class="linia">
+			<div class="cell width-40 centruj"><span>Poziom</span></div>
+			<div class="cell width-150 centruj"><span>Atrybut</span></div>
+			<div class="cell width-50 centruj"><span>Wprawa</span></div>
+		</div>
+
+		<fieldset class="repeating_AtrybutySpoleczne">
+
+		<div class="">
+			<input type="number" name="attr_AtrSpoPoz" value="0" min="0" max="5">
+			<input class="width-150" type="text" name="attr_AtrSpoNaz">
+			<input type="number" name="attr_AtrSpoWpr" value="0" min="0" max="30">
+			<button type="roll" name="roll_TestowanieAtrybutuSpolecznego" value="/roll (@{Fatum}+@{BieSpo}+@{AtrSpoPoz}+?{Ile kości z PULI LOSU chcesz dodać do wykonywanego rzutu})d6<[[@{BieSpo}+@{AtrSpoPoz}+?{Ile kości z PULI LOSU chcesz poświęcić, aby zwiększyć PRÓG}]]"></button>
+		</div>
+		<div class="">
+			<textarea class="width-240" name="attr_AtrSpoSpec" placeholder="Specjalizacja"></textarea>
+		</div>
+
+		</fieldset>
+
+	</div>
+
+</div>
+
+<div class="atrybuty">
+
+	<div class=""><label>Atrybuty zawodowe</label></div>
+
+	<div class="">
+
+		<div>
+			<div class="cell width-45 centruj">Biegłość </div>
+			<input type="number" name="attr_BieZaw" value="0" min="0" max="5">
+		</div>
+	
+		<div class="linia">
+			<div class="cell width-40 centruj"><span>Poziom</span></div>
+			<div class="cell width-150 centruj"><span>Atrybut</span></div>
+			<div class="cell width-50 centruj"><span>Wprawa</span></div>
+		</div>
+
+		<fieldset class="repeating_AtrybutyZawodowe">
+
+		<div class="">
+			<input type="number" name="attr_AtrZawPoz" value="0" min="0" max="5">
+			<input class="width-150" type="text" name="attr_AtrZawNaz">
+			<input type="number" name="attr_AtrZawWpr" value="0" min="0" max="30">
+			<button type="roll" name="roll_TestowanieAtrybutuZawodowe" value="/roll (@{Fatum}+@{BieZaw}+@{AtrZawPoz}+?{Ile kości z PULI LOSU chcesz dodać do wykonywanego rzutu})d6<[[@{BieZaw}+@{AtrZawPoz}+?{Ile kości z PULI LOSU chcesz poświęcić, aby zwiększyć PRÓG}]]"></button>
+		</div>
+		<div class="">
+			<textarea class="width-240" name="attr_AtrZawSpec" placeholder="Specjalizacja"></textarea>
+		</div>
+
+		</fieldset>
+
+	</div>
+
+</div>
+
+
+</div>
+
+<rolltemplate class="sheet-rolltemplate-fatum">
+    <table>
+		<tr><th>{{miano}}</th></tr>
+        <tr><th>{{name}}</th></tr>
+        <tr><td><b>Rzut:</b> {{rzut}}</td></tr>
+	</table>
+</rolltemplate>
