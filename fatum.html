@@ -1,0 +1,1029 @@
+<div class="character-sheet__top-bg"></div>
+<div class="character-sheet">
+    <div class="row">
+        <div class="col-5">
+            <div class="input-box">
+                <label class="character-details-label">
+                    <span data-i18n="titre">Miano</span>
+                    <input type="text" name="attr_character_name" spellcheck="false">
+                </label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="input-box">
+                <label class="character-details-label">
+                    <span data-i18n="race">Rasa</span>
+                    <select name="attr_race">
+                        <option value="1" selected="selected" data-i18n="human">człowiek</option>
+                        <option value="2" data-i18n="half-angel">półanioł</option>
+                        <option value="3" data-i18n="half-angel-giant">półanioł olbrzym</option>
+                        <option value="4" data-i18n="demonic-lilita">lilita demoniczny</option>
+                        <option value="5" data-i18n="lilita">lilita</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="input-box">
+                <label class="character-details-label">
+                    <span data-i18n="carrier">Nosiciel</span>
+                    <select name="attr_carrier">
+                        <option value="0" selected="selected">-</option>
+                        <option value="1" data-i18n="human">człowiek</option>
+                        <option value="2" data-i18n="half-angel">półanioł</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="input-box input-box--hr">
+                <label><span data-i18n="appearance">Wygląd i wiek</span></label>
+                <textarea name="attr_appearance" rows="8"></textarea>
+            </div>
+
+            <div class="input-box input-box--hr">
+                <label><span data-i18n="fortune">Pieniądze i majątek</span></label>
+                <textarea name="attr_fortune" rows="2"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-box flex">
+                        <button class="mini-dice" type="action" name="act_roll" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{fatum}]]}} {{baseDice=[[@{Fatum}]]}} {{roll-name=fatum}}'></button>
+                        <label>
+                            <span data-i18n="fatum">Fatum</span>
+                            <input type="number" name="attr_fatum" value="1" min="1" max="3">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-box">
+                        <label>
+                            <span data-i18n="fate-pool" style="padding-right: 0;">Pula losu</span>
+                            <input type="number" name="attr_fate_pool" value="0" min="0" max="10">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="input-box input-box--hr">
+                <label><span data-i18n="advantages">Przewagi</span></label>
+                <textarea name="attr_advantages" rows="4"></textarea>
+            </div>
+
+            <div class="input-box input-box--hr">
+                <label><span data-i18n="disadvantages">Zawady</span></label>
+                <textarea name="attr_disadvantages" rows="3"></textarea>
+            </div>
+
+            <div class="input-box input-box--hr">
+                <label><span data-i18n="states">Stany</span></label>
+                <textarea name="attr_states" style="height: 50px;"></textarea>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="input-box input-box--hr">
+                <label><span data-i18n="equipment">Ekwipunek</span></label>
+                <textarea name="attr_equipment" rows="8"></textarea>
+            </div>
+
+            <div class="input-box input-box--hr">
+                <div class="flex wounds-box">
+                    <label class="checkbox-label" style="width: 42px;">
+                        <span data-i18n="wounds">Rany</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <span data-i18n="light">Lekka</span>
+                        <input type="checkbox" name="attr_wound" value="1">
+                        <div class="checkmark"></div>
+                    </label>
+                    <label class="checkbox-label">
+                        <span data-i18n="average">Średnia</span>
+                        <input type="checkbox" name="attr_wound" value="2">
+                        <div class="checkmark"></div>
+                        <span class="wound-desc">+1 do rzutu<br>najniższej<br>kości</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <span data-i18n="heavy">Ciężka</span>
+                        <input type="checkbox" name="attr_wound" value="3">
+                        <div class="checkmark"></div>
+                        <span class="wound-desc">+1 do rzutów<br>wszystkich<br>kości</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <span data-i18n="critical">Krytyczna</span>
+                        <input type="checkbox" name="attr_wound" value="4">
+                        <div class="checkmark"></div>
+                        <span class="wound-desc">+2 do rzutów<br>wszystkich<br>kości</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="main">
+    <button type="action" name="act_main" class="not-roll" data-i18n="attributes">Atrybuty</button>
+    <button type="action" name="act_notes" class="not-roll" data-i18n="notes">Notatki</button>
+    <div class="row" style="margin-top: -35px;">
+        <div class="col-3">
+            <br>
+        </div>
+        <div class="col-5">
+            <div class="inline-block">
+                <label class="checkbox-label horizontal">
+                    <span data-i18n="additional-modifier">Modyfikator z innego źródła</span>
+                    <input type="checkbox" name="attr_modifierquery" value="{{additionalThreshold=[[?{O ile z INNEGO źródła chcesz podnieś próg rzutu?|0}]]}} {{additionalDice=[[?{Ile kości z INNEGO źródła chcesz dodać|0}]]}}">
+                    <div class="checkmark"></div>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="inline-block">
+                <label class="checkbox-label horizontal">
+                    <span data-i18n="secret-roll">Sekretny rzut koścmi</span>
+                    <input type="checkbox" name="attr_secret_roll" value="/w gm">
+                    <div class="checkmark"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="sheet-main">
+        <div class="row">
+            <div class="col-6 more-col-padding">
+                <div class="attributes-box">
+                    <div class="attributes-box__line">
+                        <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                        <div class="input-box attributes-box__line-horizontal">
+                            <input type="number" name="attr_physical_main_level" value="0" min="0" max="5">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fieldset-labels center">
+                            <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                            <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                            <span class="flex-3 mini-title" data-i18n="physical-attributes">Atrybuty Fizyczne</span>
+                            <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                        </div>
+    
+                        <div class="attributes-box__line-ver">
+                            <fieldset class="repeating_physical">
+                                <div class="attribute-box__line-horizontal-left"></div>
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="physical" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{physical_main_level} + @{prefix-physical_level}]]}} {{baseDice=[[@{Fatum} + @{physical_main_level} + @{prefix-physical_level}]] }} {{level=[[@{prefix-physical_level}]]}} {{roll-name=@{prefix-physical_name}}}'></button>
+                                <input class="flex-1" type="number" name="attr_physical_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_physical_name">
+                                <input class="flex-1" type="number" name="attr_physical_skill" value="0" min="0" max="30">
+                                <div class="break"></div>
+                                <textarea name="attr_physical_spec" placeholder="Specjalizacja"></textarea>
+                            </fieldset>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-6 more-col-padding">
+                <div class="attributes-box">
+                    <div class="attributes-box__line">
+                        <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                        <div class="input-box attributes-box__line-horizontal">
+                            <input type="number" name="attr_mind_main_level" value="0" min="0" max="5">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fieldset-labels center">
+                            <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                            <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                            <span class="flex-3 mini-title" data-i18n="mind-attributes">Atrybuty Umysłowe</span>
+                            <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                        </div>
+    
+                        <div class="attributes-box__line-ver">
+                            <fieldset class="repeating_mind">
+                                <div class="attribute-box__line-horizontal-left"></div>
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="mind" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{mind_main_level} + @{prefix-mind_level}]]}} {{baseDice=[[@{Fatum} + @{mind_main_level} + @{prefix-mind_level}]] }} {{level=[[@{prefix-mind_level}]]}} {{roll-name=@{prefix-mind_name}}}'></button>
+                                <input class="flex-1" type="number" name="attr_mind_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_mind_name">
+                                <input class="flex-1" type="number" name="attr_mind_skill" value="0" min="0" max="30">
+                                <div class="break"></div>
+                                <textarea name="attr_mind_spec" placeholder="Specjalizacja"></textarea>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-6 more-col-padding">
+                <div class="attributes-box">
+                    <div class="attributes-box__line">
+                        <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                        <div class="input-box attributes-box__line-horizontal">
+                            <input type="number" name="attr_society_main_level" value="0" min="0" max="5">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fieldset-labels center">
+                            <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                            <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                            <span class="flex-3 mini-title" data-i18n="society-attributes">Atrybuty Społeczne</span>
+                            <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                        </div>
+    
+                        <div class="attributes-box__line-ver">
+                            <fieldset class="repeating_society">
+                                <div class="attribute-box__line-horizontal-left"></div>
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="society" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{society_main_level} + @{prefix-society_level}]]}} {{baseDice=[[@{Fatum} + @{society_main_level} + @{prefix-society_level}]] }} {{level=[[@{prefix-society_level}]]}} {{roll-name=@{prefix-society_name}}}'></button>
+                                <input class="flex-1" type="number" name="attr_society_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_society_name">
+                                <input class="flex-1" type="number" name="attr_society_skill" value="0" min="0" max="30">
+                                <div class="break"></div>
+                                <textarea name="attr_society_spec" placeholder="Specjalizacja"></textarea>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-6 more-col-padding">
+                <div class="attributes-box">
+                    <div class="attributes-box__line">
+                        <label data-i18n="proficiency" style="margin-bottom: 15px;">Biegłość</label>
+                        <div class="input-box attributes-box__line-horizontal">
+                            <input type="number" name="attr_professional_main_level" value="0" min="0" max="5">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fieldset-labels center">
+                            <span class="flex-1 mini-title" style="width: 36px;"><br></span>
+                            <span class="flex-1 mini-title" data-i18n="level">Poziom</span>
+                            <span class="flex-3 mini-title" data-i18n="professional-attributes">Atrybuty Zawodowe</span>
+                            <span class="flex-1 mini-title" data-i18n="skill">Wprawa</span>
+                        </div>
+    
+                        <div class="attributes-box__line-ver">
+                            <fieldset class="repeating_professional">
+                                <div class="attribute-box__line-horizontal-left"></div>
+                                <button class="flex-1" type="action" name="act_roll" data-attribute="professional" value='&{template:fatum} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{threshold=[[@{professional_main_level} + @{prefix-professional_level}]]}} {{baseDice=[[@{Fatum} + @{professional_main_level} + @{prefix-professional_level}]] }} {{level=[[@{prefix-professional_level}]]}} {{roll-name=@{prefix-professional_name}}}'></button>
+                                <input class="flex-1" type="number" name="attr_professional_level" value="0" min="0" max="5">
+                                <input class="flex-3" type="text" name="attr_professional_name">
+                                <input class="flex-1" type="number" name="attr_professional_skill" value="0" min="0" max="30">
+                                <div class="break"></div>
+                                <textarea name="attr_professional_spec" placeholder="Specjalizacja"></textarea>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sheet-notes">
+        <div class="row">
+            <div class="col-12">
+                <textarea name="attr_notes" id="" cols="30" rows="20" placeholder="Wprowadź treść notatek" style="border: 1px solid #272626;"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="character-sheet__bottom-bg"></div>
+
+
+<rolltemplate class="sheet-rolltemplate-fatum">
+	<div class="template-wrap">
+		<div class="template-header">
+			{{#character_name}}
+			{{#character_id}}[{{character_name}}](https://journal.roll20.net/character/{{character_id}}){{/character_id}}
+			{{^character_id}}{{character_name}}{{/character_id}}
+			{{/character_name}}
+		</div>
+
+		<div class="template-subtitle">
+			{{roll-name}}
+		</div>
+
+		<div class="template-grid">
+			{{#rollGreater() computed::baseDice 0}}
+			<!-- BASE DIE ONE -->
+			<div class="template-grid-item">
+                {{#rollGreater() fatum 0}}
+                    <div class="template-roll-fatum">
+                {{/rollGreater() fatum 0}}
+                {{#rollBetween() computed::baseRoll1 1 1}}
+                    <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll1 1 1}}
+				{{#rollBetween() computed::baseRoll1 2 5}}
+				    <div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll1 2 5}}
+				{{#rollBetween() computed::baseRoll1 6 6}}
+				    <div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll1 6 6}}
+
+                {{computed::baseRoll1}}</div>
+                {{#rollGreater() fatum 0}}
+                    </div>
+                {{/rollGreater() fatum 0}}
+			</div>
+			{{/rollGreater() computed::baseDice 0}}
+
+			{{#rollGreater() computed::baseDice 1}}
+			<!-- BASE DIE TWO -->
+			<div class="template-grid-item">
+                {{#rollGreater() fatum 1}}
+                    <div class="template-roll-fatum">
+                {{/rollGreater() fatum 1}}
+                {{#rollBetween() computed::baseRoll2 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll2 1 1}}
+				{{#rollBetween() computed::baseRoll2 2 5}}
+				<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll2 2 5}}
+				{{#rollBetween() computed::baseRoll2 6 6}}
+				<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll2 6 6}}
+
+                {{computed::baseRoll2}}</div>
+                {{#rollGreater() fatum 1}}
+                    </div>
+                {{/rollGreater() fatum 1}}
+			</div>
+			{{/rollGreater() computed::baseDice 1}}
+
+			{{#rollGreater() computed::baseDice 2}}
+			<!-- BASE DIE THREE -->
+			<div class="template-grid-item">
+                {{#rollGreater() fatum 2}}
+                    <div class="template-roll-fatum">
+                {{/rollGreater() fatum 2}}
+                {{#rollBetween() computed::baseRoll3 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll3 1 1}}
+				{{#rollBetween() computed::baseRoll3 2 5}}
+				<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll3 2 5}}
+				{{#rollBetween() computed::baseRoll3 6 6}}
+				<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll3 6 6}}
+
+                {{computed::baseRoll3}}</div>
+                {{#rollGreater() fatum 2}}
+                    </div>
+                {{/rollGreater() fatum 2}}
+			</div>
+			{{/rollGreater() computed::baseDice 2}}
+
+			{{#rollGreater() computed::baseDice 3}}
+			<!-- BASE DIE FOUR -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll4 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll4 1 1}}
+				{{#rollBetween() computed::baseRoll4 2 5}}
+				<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll4 2 5}}
+				{{#rollBetween() computed::baseRoll4 6 6}}
+				<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll4 6 6}}
+
+                {{computed::baseRoll4}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 3}}
+
+			{{#rollGreater() computed::baseDice 4}}
+			<!-- BASE DIE FIVE -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll5 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll5 1 1}}
+				{{#rollBetween() computed::baseRoll5 2 5}}
+				<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll5 2 5}}
+				{{#rollBetween() computed::baseRoll5 6 6}}
+				<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll5 6 6}}
+
+                {{computed::baseRoll5}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 4}}
+
+			{{#rollGreater() computed::baseDice 5}} <!-- BASE DIE SIX -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll6 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll6 1 1}}
+				{{#rollBetween() computed::baseRoll6 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll6 2 5}}
+				{{#rollBetween() computed::baseRoll6 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll6 6 6}}
+
+                {{computed::baseRoll6}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 5}}
+			
+			{{#rollGreater() computed::baseDice 6}} <!-- BASE DIE SEVEN -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll7 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll7 1 1}}
+				{{#rollBetween() computed::baseRoll7 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll7 2 5}}
+				{{#rollBetween() computed::baseRoll7 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll7 6 6}}
+
+                {{computed::baseRoll7}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 6}}
+			
+			{{#rollGreater() computed::baseDice 7}} <!-- BASE DIE EIGHT -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll8 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll8 1 1}}
+				{{#rollBetween() computed::baseRoll8 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll8 2 5}}
+				{{#rollBetween() computed::baseRoll8 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll8 6 6}}
+
+                {{computed::baseRoll8}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 7}}
+			
+			{{#rollGreater() computed::baseDice 8}} <!-- BASE DIE NINE -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll9 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll9 1 1}}
+				{{#rollBetween() computed::baseRoll9 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll9 2 5}}
+				{{#rollBetween() computed::baseRoll9 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll9 6 6}}
+
+                {{computed::baseRoll9}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 8}}
+			
+			{{#rollGreater() computed::baseDice 9}} <!-- BASE DIE TEN -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll10 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll10 1 1}}
+				{{#rollBetween() computed::baseRoll10 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll10 2 5}}
+				{{#rollBetween() computed::baseRoll10 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll10 6 6}}
+
+                {{computed::baseRoll10}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 9}}
+			
+			{{#rollGreater() computed::baseDice 10}} <!-- BASE DIE ELEVEN -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll11 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll11 1 1}}
+				{{#rollBetween() computed::baseRoll11 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll11 2 5}}
+				{{#rollBetween() computed::baseRoll11 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll11 6 6}}
+
+                {{computed::baseRoll11}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 10}}
+			
+			{{#rollGreater() computed::baseDice 11}} <!-- BASE DIE TWELVE -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll12 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll12 1 1}}
+				{{#rollBetween() computed::baseRoll12 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll12 2 5}}
+				{{#rollBetween() computed::baseRoll12 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll12 6 6}}
+
+                {{computed::baseRoll12}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 11}}
+			
+			{{#rollGreater() computed::baseDice 12}} <!-- BASE DIE THIRTEEN -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll13 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll13 1 1}}
+				{{#rollBetween() computed::baseRoll13 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll13 2 5}}
+				{{#rollBetween() computed::baseRoll13 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll13 6 6}}
+
+                {{computed::baseRoll13}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 12}}
+			
+			{{#rollGreater() computed::baseDice 13}} <!-- BASE DIE FOURTEEN -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll14 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll14 1 1}}
+				{{#rollBetween() computed::baseRoll14 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll14 2 5}}
+				{{#rollBetween() computed::baseRoll14 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll14 6 6}}
+
+                {{computed::baseRoll14}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 13}}
+			
+			{{#rollGreater() computed::baseDice 14}} <!-- BASE DIE FIFTEEN -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll15 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll15 1 1}}
+				{{#rollBetween() computed::baseRoll15 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll15 2 5}}
+				{{#rollBetween() computed::baseRoll15 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll15 6 6}}
+
+                {{computed::baseRoll15}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 14}}
+
+			{{#rollGreater() computed::baseDice 15}} <!-- BASE DIE SIXTEEN -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll16 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll16 1 1}}
+				{{#rollBetween() computed::baseRoll16 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll16 2 5}}
+				{{#rollBetween() computed::baseRoll16 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll16 6 6}}
+
+                {{computed::baseRoll16}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 15}}
+			
+			{{#rollGreater() computed::baseDice 16}} <!-- BASE DIE SEVENTEEN -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll17 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll17 1 1}}
+				{{#rollBetween() computed::baseRoll17 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll17 2 5}}
+				{{#rollBetween() computed::baseRoll17 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll17 6 6}}
+
+                {{computed::baseRoll17}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 16}}
+
+			{{#rollGreater() computed::baseDice 17}} <!-- BASE DIE EIGHTEEN -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll18 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll18 1 1}}
+				{{#rollBetween() computed::baseRoll18 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll18 2 5}}
+				{{#rollBetween() computed::baseRoll18 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll18 6 6}}
+                
+                {{computed::baseRoll18}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 17}}
+
+			{{#rollGreater() computed::baseDice 18}} <!-- BASE DIE NINETEEN -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll19 1 1}}
+                <div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll19 1 1}}
+				{{#rollBetween() computed::baseRoll19 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll19 2 5}}
+				{{#rollBetween() computed::baseRoll19 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll19 6 6}}
+
+                {{computed::baseRoll19}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 18}}
+
+			{{#rollGreater() computed::baseDice 19}} <!-- BASE DIE TWENTY -->
+			<div class="template-grid-item">
+                {{#rollBetween() computed::baseRoll20 1 1}}
+					<div class="template-roll-success">
+				{{/rollBetween() computed::baseRoll20 1 1}}
+				{{#rollBetween() computed::baseRoll20 2 5}}
+					<div class="template-roll-between">
+				{{/rollBetween() computed::baseRoll20 2 5}}
+				{{#rollBetween() computed::baseRoll20 6 6}}
+					<div class="template-roll-fail">
+				{{/rollBetween() computed::baseRoll20 6 6}}
+                
+                {{computed::baseRoll20}}</div>
+			</div>
+			{{/rollGreater() computed::baseDice 19}}
+		</div>
+
+        {{#rollGreater() computed::fatePool 0}}
+        <div class="template-dice-stats without-bg">
+            <div><span style="color: #1378bd" data-i18n="dices-from-fate-pool">Kości przydzielone z Puli Losu</span></div>
+        </div>
+        <div class="template-dice-stats template-dice-additional">
+            <div><span data-i18n="to-threshold">Do progu rzutu</span></div>
+            <div class="template-dice-stats-value blue-bg">{{computed::largerThreshold}}</div>
+        </div>
+        <div class="template-dice-stats template-dice-additional">
+            <div><span data-i18n="to-dice-number">Do liczby kości</span></div>
+            <div class="template-dice-stats-value blue-bg">{{computed::moreDice}}</div>
+        </div>
+        {{/rollGreater() computed::fatePool 0}}
+
+        {{#rollGreater() computed::additionalPool 0}}
+        <div class="template-dice-stats without-bg" style="margin-top:10px;">
+            <div><span style="color: #9f1f63" data-i18n="dices-from-additional">Kości przydzielone z Innych Źródeł</span></div>
+        </div>
+        <div class="template-dice-stats template-dice-additional">
+            <div><span data-i18n="to-threshold">Do progu rzutu</span></div>
+            <div class="template-dice-stats-value purple-bg">{{computed::additionalThreshold}}</div>
+        </div>
+        <div class="template-dice-stats template-dice-additional" style="margin-bottom: 10px;">
+            <div><span data-i18n="to-dice-number">Do liczby kości</span></div>
+            <div class="template-dice-stats-value purple-bg">{{computed::additionalDice}}</div>
+        </div>
+        {{/rollGreater() computed::additionalPool 0}}
+
+        <div class="template-hr" data-i18n="roll-result">Wynik Rzutu</div>
+
+        <div class="template-dice-stats">
+            <div><span data-i18n="roll-threshold">Próg rzutu</span></div>
+            <div class="template-dice-stats-value">{{computed::threshold}}</div>
+        </div>
+
+        {{#basicRoll}}
+        <div style="height: 10px;"></div>
+        <div class="template-dice-stats">
+            <div><span data-i18n="roll-successes">Sukcesy</span></div>
+            <div class="template-dice-stats-value">{{computed::success}}</div>
+        </div>
+        <div class="template-dice-stats">
+            <div><span data-i18n="roll-successes-from-level">Sukcesy Z Poziomu</span></div>
+            <div class="template-dice-stats-value">{{level}}</div>
+        </div>
+        {{/basicRoll}}
+
+        <div class="template-dice-stats">
+            <div><span data-i18n="roll-successes-total">Sukcesy Łącznie</span></div>
+            <div class="template-dice-stats-value success">{{computed::total_success}}</div>
+        </div>
+
+        {{#basicRoll}}
+        <div style="height: 10px;"></div>
+        <div class="template-dice-stats">
+            <div><span data-i18n="roll-fails">Porażki</span></div>
+            <div class="template-dice-stats-value fail">{{computed::fail}}</div>
+        </div>
+        {{/basicRoll}}
+        
+        {{#rollBetween() wound 2 2}}
+            <div class="template-dice-stats without-bg">
+                <div><span data-i18n="average-damage-desc">Średnia rana - Najniższy wynik na kości otrzymuje karę +1</span></div>
+            </div>
+        {{/rollBetween() wound 2 2}}
+
+        {{#rollBetween() wound 3 3}}
+            <div class="template-dice-stats without-bg">
+                <div><span>Ciężka rana - Wszystkie kości otrzymują karę +1</span></div>
+            </div>
+        {{/rollBetween() wound 3 3}}
+
+        {{#rollBetween() wound 4 4}}
+            <div class="template-dice-stats without-bg">
+                <div><span>Krytyczna rana - Wszystkie kości otrzymuje karę +2</span></div>
+            </div>
+        {{/rollBetween() wound 4 4}}
+
+
+	</div>
+</rolltemplate>
+
+
+<script type="text/worker">
+
+    const buttonlist = ["main","notes"];
+
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+
+    on('clicked:roll', async (event) => {
+        let rollBase = "@{secret_roll}" + event.htmlAttributes.value + " {{baseRoll1=[[1d6]] }} {{baseRoll2=[[1d6]] }} {{baseRoll3=[[1d6]] }} {{baseRoll4=[[1d6]] }} {{baseRoll5=[[1d6]] }} {{baseRoll6=[[1d6]] }} {{baseRoll7=[[1d6]] }} {{baseRoll8=[[1d6]] }} {{baseRoll9=[[1d6]] }} {{baseRoll10=[[1d6]] }} {{baseRoll11=[[1d6]] }} {{baseRoll12=[[1d6]] }} {{baseRoll13=[[1d6]] }} {{baseRoll14=[[1d6]] }} {{baseRoll15=[[1d6]] }} {{baseRoll16=[[1d6]] }} {{baseRoll17=[[1d6]] }} {{baseRoll18=[[1d6]] }} {{baseRoll19=[[1d6]] }} {{baseRoll20=[[1d6]] }} {{success=[[1d6]]}} {{fail=[[1d6]]}} {{total_success=[[1d6]]}} {{fatum=[[@{fatum}]]}} {{wound=[[0]]}} {{level=[[0]]}}";
+        let rollResult = await startRoll(rollBase);  
+        let computedValues = await calcComputedValues(rollResult);
+    
+        finishRoll(
+            rollResult.rollId,
+            computedValues
+        );
+    });
+
+    on('clicked:repeating_physical:roll clicked:repeating_mind:roll clicked:repeating_society:roll clicked:repeating_professional:roll', async (event) => {
+        var attribute = event.htmlAttributes['data-attribute'];
+
+        // prefix gets an empty string for normal attributes, and repeating_section_ID_ for repeating attributes
+        var trigger = event.triggerName.slice(8); // this always starts with 'clicked:'
+        var prefix = trigger.split('_').slice(0,3).join('_') + '_'
+
+        let rollBase = "@{secret_roll}" + event.htmlAttributes.value.replaceAll('prefix-', `${prefix}`) + " {{largerThreshold=[[?{Ile kości z PULI LOSU chcesz poświęcić, aby zwiększyć PRÓG}|0]]}} {{moreDice=[[?{Ile kości z PULI LOSU chcesz dodać do wykonywanego rzutu}|0]]}} {{baseRoll1=[[1d6]] }} {{baseRoll2=[[1d6]] }} {{baseRoll3=[[1d6]] }} {{baseRoll4=[[1d6]] }} {{baseRoll5=[[1d6]] }} {{baseRoll6=[[1d6]] }} {{baseRoll7=[[1d6]] }} {{baseRoll8=[[1d6]] }} {{baseRoll9=[[1d6]] }} {{baseRoll10=[[1d6]] }} {{baseRoll11=[[1d6]] }} {{baseRoll12=[[1d6]] }} {{baseRoll13=[[1d6]] }} {{baseRoll14=[[1d6]] }} {{baseRoll15=[[1d6]] }} {{baseRoll16=[[1d6]] }} {{baseRoll17=[[1d6]] }} {{baseRoll18=[[1d6]] }} {{baseRoll19=[[1d6]] }} {{baseRoll20=[[1d6]] }} {{success=[[1d6]]}} {{fail=[[1d6]]}} {{total_success=[[1d6]]}} {{wound=[[@{wound}]]}} {{fatum=[[@{fatum}]]}} @{modifierquery} {{basicRoll=true}} {{fatePool=[[0]]}} {{additionalPool=[[0]]}}";
+        let rollResult = await startRoll(rollBase);  
+
+        var fate_pool = await asw.getAttrs(['fate_pool']);
+        fate_pool = Object.values(fate_pool);
+
+        let computedValues = await calcComputedValues(rollResult, fate_pool*1);
+    
+        finishRoll(
+            rollResult.rollId,
+            computedValues
+        );
+    });
+
+    // Helper for calc computed values
+    const calcComputedValues = async (rollResult, fate_pool) => {
+        var results = rollResult.results;
+        var threshold = await calcThreshold(results, fate_pool);
+        fate_pool = threshold.fatePoolUpdate;
+
+        var dices = await calcDice(results, fate_pool);
+        var baseDice = dices.table.length;
+        fate_pool = dices.fatePoolUpdate;
+
+        var auto_level = results.level.result;
+
+        var wound = results.wound.result;
+        var woundUpdate = await addWound(dices.table, wound);
+        dices.table = woundUpdate.table;
+       
+        var success = 0;
+        for (i = 0; dices.table.length > i; i++) {
+            if (dices.table[i] <= threshold.value) {
+                success += 1;
+            }
+        }
+
+        setAttrs({
+            [`fate_pool`]: fate_pool
+        }); 
+
+        let computedValues = {
+            fail: baseDice - success,
+            success: success,
+            total_success: success + auto_level,
+            baseDice: baseDice,
+            threshold: threshold.value,
+            moreDice: dices.moreDice,
+            largerThreshold: threshold.largerThreshold,
+            additionalDice: dices.additionalDice,
+            additionalThreshold: threshold.additionalThreshold,
+            fatePool: dices.moreDice + threshold.largerThreshold,
+            additionalPool: dices.additionalDice + threshold.additionalThreshold,
+            ...woundUpdate.computedValues
+        };
+
+        return computedValues;
+    }
+
+    // Helper for calc dice table
+    const calcDice = async (results, fate_pool) => {
+        var moreDice = 0;
+        if (results.moreDice != null) {
+            moreDice = results.moreDice.result;
+        }
+
+        if (fate_pool <= moreDice) {
+            moreDice = fate_pool;
+        }
+        
+        var baseDice = results.baseDice.result + moreDice;
+
+        var unusedFateDice = 0;
+        var unusedAdditional = 0;
+        var additionalDice = 0;
+        if (results.additionalDice != null) {
+            additionalDice = results.additionalDice.result;
+        }
+
+        if (baseDice > 20) {
+            unusedFateDice = baseDice - 20;
+            baseDice = 20;
+            moreDice -= unusedFateDice;
+            additionalDice = 0;
+        } else {
+            baseDice += additionalDice;
+
+            if (baseDice > 20) {
+                unusedAdditional = baseDice - 20;
+                baseDice = 20;
+                additionalDice -= unusedAdditional;
+            }
+        }
+
+        var table = [];
+        var i = 0;
+        for (const [key, value] of Object.entries(results)) {
+            if (i == baseDice) break;
+            if (key != 'threshold' && key != 'baseDice' && key != 'level' && key != 'success' && key != 'fail' && key != 'total_success' && key != 'largerThreshold' && key != 'moreDice') {
+                table.push(value.result);
+                i++
+            }
+        }
+
+        fate_pool -= moreDice;
+
+        var obj = {
+            table: table,
+            moreDice: moreDice,
+            additionalDice: additionalDice,
+            fatePoolUpdate: fate_pool
+        }
+
+        return obj;
+    }
+
+    // Calc threshold
+    const calcThreshold = async (results, fate_pool) => {
+        var threshold = results.threshold.result;
+        if (threshold == 0) {
+            threshold = 1;
+        }
+
+        var unusedFate = 0;
+        var unusedAdditional = 0;
+
+        var additionalThreshold = 0;
+        if (results.additionalThreshold != null) {
+            additionalThreshold = results.additionalThreshold.result;
+        }
+    
+        if (threshold < 5) {
+            var largerThreshold = 0;
+            if (results.largerThreshold != null) {
+                largerThreshold = results.largerThreshold.result;
+            }
+
+            if (fate_pool <= largerThreshold) {
+                largerThreshold = fate_pool;
+            }
+            threshold += largerThreshold;
+    
+            if (threshold > 5) {
+                unusedFate = threshold - 5;
+                threshold = 5;
+                largerThreshold -= unusedFate;
+                additionalThreshold = 0;
+            } else {
+                threshold += additionalThreshold;
+
+                if (threshold > 5) {
+                    unusedAdditional = threshold - 5;
+                    threshold = 5;
+                    additionalThreshold -= unusedAdditional;
+                }
+            }
+        } 
+
+        fate_pool -= largerThreshold;
+
+        var obj = {
+            value: threshold,
+            largerThreshold: largerThreshold,
+            additionalThreshold: additionalThreshold,
+            fatePoolUpdate: fate_pool
+        }
+
+        return obj;
+    }
+
+    // Helper for calc dice table
+    const addWound = async (table, wound) => {
+        var tableOfPairs = [0,0,0,0,0,0,0];
+        var computedValues = {};
+        var obj = {
+            table: table
+        };
+
+        if (wound != 2 && wound != 3 && wound != 4) {
+            return obj;
+        }
+
+        if (wound == 2) {
+            for (i = 0; table.length > i; i++) {
+                tableOfPairs[table[i]] += 1;
+            }
+
+            for (k = 0; tableOfPairs.length-1 > k; k++) {
+                if (tableOfPairs[k] > 0) {
+                    var item = {};
+    
+                    var num = table.indexOf(k)+1;
+                    var value = k;
+                    var baseRoll = 'baseRoll'+num;
+                    computedValues[baseRoll] = value+1;
+                    table[k] = value+1;
+                    break;
+                }
+            }
+
+            obj = {
+                table: table,
+                computedValues: computedValues
+            }
+
+            return obj;
+        }
+
+        for (l = 0; table.length > l; l++) {
+            var item = {};
+            var value = table[l];
+            var num = l+1;
+            var baseRoll = 'baseRoll' + num;
+
+            if (wound == 4 && value < 5) {
+                computedValues[baseRoll] = value+2;
+                table[l] = value+2;
+            } else if (value < 6) {
+                computedValues[baseRoll] = value+1;
+                table[l] = value+1;
+            }
+        }
+
+        obj = {
+            table: table,
+            computedValues: computedValues
+        }
+
+        return obj;
+    }
+
+    // Get attr helper
+    const asw = (() => {
+        const setActiveCharacterId = function(charId){
+            let oldAcid=getActiveCharacterId();
+            let ev = new CustomEvent("message");
+            ev.data={"id":"0", "type":"setActiveCharacter", "data":charId};
+            self.dispatchEvent(ev);
+            return oldAcid;
+        };
+        const promisifyWorker = (worker, parameters) => {
+            let acid=getActiveCharacterId();
+            let prevAcid=null;
+            return new Promise((res,rej)=>{
+                prevAcid=setActiveCharacterId(acid);
+                try {if (worker===0) getAttrs(parameters[0]||[],(v)=>res(v));
+                    else if (worker===1) setAttrs(parameters[0]||{}, parameters[1]||{},(v)=>res(v));
+                    else if (worker===2) getSectionIDs(parameters[0]||'',(v)=>res(v));
+                } catch(err) {rej(console.error(err))}
+            }).finally(()=>setActiveCharacterId(prevAcid));
+        }
+        
+        return {
+            getAttrs(attrArray) {return promisifyWorker(0, [attrArray])},
+            setAttrs(attrObj, options) {return promisifyWorker(1, [attrObj, options])},
+            getSectionIDs(section) {return promisifyWorker(2, [section])},
+            setActiveCharacterId,
+        }
+    })();
+
+</script>

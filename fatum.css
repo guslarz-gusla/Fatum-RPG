@@ -1,0 +1,1026 @@
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+
+/* Defaults  */
+.ui-dialog .charsheet {
+    padding: 0;
+}
+
+.character-sheet .row {
+    display: flex;
+    max-width: 100%;
+    margin: 0;
+}
+
+.col-12 {
+    width: 100%;
+    padding: 0 2px;
+}
+
+.col-10 {
+    width: 83%;
+    padding: 0 2px;
+}
+
+.col-9 {
+    width: 75%;
+    padding: 0 2px;
+}
+
+.col-8 {
+    width: 66%;
+    padding: 0 2px;
+}
+
+.col-7 {
+    width: 58%;
+    padding: 0 2px;
+}
+
+.col-6 {
+    width: 50%;
+    padding: 0 2px;
+}
+
+.col-5 {
+    width: 41%;
+    padding: 0 2px;
+}
+
+.col-4 {
+    width: 33%;
+    padding: 0 2px;
+}
+
+.col-3 {
+    width: 25%;
+    padding: 0 2px;
+}
+
+.col-2 {
+    width: 17%;
+    padding: 0 2px;
+}
+
+.more-col-padding {
+    padding: 0 6px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.flex-4 {
+    flex: 4;
+}
+
+.character-sheet input,
+.character-sheet select {
+    text-transform: none;
+    background: #fff;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #231f20;
+    display: inline-block;
+    font-size: 16px;
+    color: #000;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 6px;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+.sheet-darkmode .character-sheet input,
+.sheet-darkmode .character-sheet select {
+    background: #000;
+    color: #fff;
+}
+
+.character-sheet input.transparent {
+    background: transparent;
+    line-height: 16px;
+    height: auto;
+    padding: 5px 5px 0;
+}
+
+.character-sheet input:focus {
+    border: 1px solid #231f20;
+    outline: none;
+}
+
+.charactersheet {
+    padding: 0;
+}
+
+.character-sheet textarea {
+    background-attachment: local;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 1px 9px;
+    box-sizing: border-box;
+    height: auto;
+    resize: vertical;
+    margin: 0;
+    border: 0;
+    color: #000;
+    border-radius: 0;
+}
+
+.sheet-darkmode textarea {
+    color: #fff;
+}
+
+.character-sheet textarea:focus {
+    border: 0;
+    outline: none;
+}
+
+.charsheet .character-sheet button[type="roll"],
+.charsheet .character-sheet button[type="action"] {
+    border: 0;
+    font-family: 'Girassol', cursive;
+    background: transparent;
+    text-transform: uppercase;
+    color: #231f20;
+    cursor: pointer;
+    transition: .3s all ease;
+    text-shadow: none;
+    padding: 0;
+    height: 36px;
+}
+
+.sheet-darkmode .charsheet .character-sheet button[type="roll"],
+.sheet-darkmode .charsheet .character-sheet button[type="action"] {
+    color: #fff;
+}
+
+.charsheet .character-sheet button[type="roll"]::before,
+.charsheet .character-sheet button[type="action"]::before {
+    content: "";
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/dice.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    height: 36px;
+    width: 36px;
+}
+
+.sheet-darkmode .charsheet .character-sheet button[type="roll"]::before,
+.sheet-darkmode .charsheet .character-sheet button[type="action"]::before {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-dice.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.charsheet .character-sheet button[type="action"].mini-dice {
+    height: 28px;
+    width: 28px;   
+}
+
+.charsheet .character-sheet button[type="action"].mini-dice::before {
+    width: 28px;
+    height: 28px;
+}
+
+.charsheet .character-sheet button[type="roll"]:hover::before,
+.charsheet .character-sheet button[type="action"]:hover::before {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/dice-hover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sheet-darkmode .charsheet .character-sheet button[type="roll"]:hover::before,
+.sheet-darkmode .charsheet .character-sheet button[type="action"]:hover::before {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-dice-hover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.charsheet .character-sheet input[type="checkbox"] {
+    width: auto;
+}
+
+.charsheet .character-sheet input[type="number"] {
+    width: 100%;
+    padding-right: 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.charsheet .character-sheet input.circle-input {
+    width: 20px;
+    padding: 0 9px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #231f20;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 2px;
+}
+
+.charsheet .character-sheet input.circle-input:checked {
+    background-color: #231f20;
+}
+
+.charsheet .character-sheet label {
+    font-weight: 400;
+    color: #333;
+}
+
+.sheet-darkmode .charsheet .character-sheet label {
+    color: #fff;
+}
+
+/* Custom modules */
+.sheet-darkmode .sheetform {
+    background-color: transparent;
+}
+
+.character-sheet__top-bg {
+    background-image: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/sheet-top-bg.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top center;
+    height: 203px;
+    width: 1000px;
+}
+
+.sheet-darkmode .character-sheet__top-bg {
+    background-image: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-sheet-top-bg.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+.character-sheet__bottom-bg {
+    background-image: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/sheet-bottom-bg.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top center;
+    height: 70px;
+    margin-top: -70px;
+    width: 1000px;
+    position: relative;
+	z-index: 1;
+}
+
+.sheet-darkmode .character-sheet__bottom-bg {
+    background-image: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-sheet-bottom-bg.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+.character-sheet {
+    background-image: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/sheet-repeat-bg.png);
+    background-size: contain;
+	background-repeat: repeat;
+	background-position: top center;
+    box-sizing: border-box;
+    padding: 8px 117px;
+    padding-bottom: 80px;
+    color: #000;
+    font-family: 'Girassol', cursive;
+    width: 1000px;
+    min-height: 1500px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sheet-darkmode .character-sheet {
+    background-image: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-sheet-repeat-bg.png);
+    background-size: contain;
+	background-repeat: repeat;
+	background-position: top center;
+    color: #fff;
+}
+
+.sheet-main,
+.sheet-notes {
+    display: none;
+}
+
+/*MAIN Sheet Layout*/
+.sheet-tabstoggle[value="main"]~div.sheet-main {
+    display: block;
+}
+
+/*NOTES Sheet Layout*/
+.sheet-tabstoggle[value="notes"]~div.sheet-notes {
+    display: block;
+}
+
+.charsheet .character-sheet .not-roll[type="action"] {
+    border: 1px solid #272626;
+	padding: 0 10px;
+	margin-right: 5px;
+	height: 30px;
+    position: relative;
+	z-index: 1;
+}
+
+.charsheet .character-sheet .not-roll[type="action"]:hover {
+    background-color: #272626;
+    color: #fff;
+}
+
+.charsheet .character-sheet .not-roll[type="action"]::before {
+    display: none;
+}
+
+.sheet-tabstoggle[value="main"] ~ .not-roll[name="act_main"], .sheet-tabstoggle[value="notes"] ~ .not-roll[name="act_notes"] {
+    background-color: #272626;
+    color: #fff;
+}
+
+.character-sheet .input-box {
+    border: 2px solid #272626;
+    margin-bottom: 3px;
+    align-items: center;
+}
+
+.character-sheet .input-box button {
+    margin-left: 3px;
+}
+
+.character-sheet .input-box label {
+    margin: 0;
+    padding: 0;
+    display: flex;
+	align-items: center;
+}
+
+.character-sheet .input-box label span {
+    padding: 7px 8px;
+    display: inline-block;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.character-sheet .input-box button + label span {
+    padding: 7px 6px;
+}
+
+.character-sheet .input-box input, 
+.character-sheet .input-box select {
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sheet-darkmode .character-sheet .input-box select {
+    background-color: #000;
+}
+
+.character-sheet .input-box.input-box--hr {
+    position: relative;
+}
+
+.character-sheet .input-box.input-box--hr::before {
+    content: "";
+    display: block;
+    height: 4px;
+    width: auto;
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/hr.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    position: absolute;
+    z-index: 1;
+    top: 29px;
+    left: 10px;
+	right: 10px;
+}
+
+.sheet-darkmode .character-sheet .input-box.input-box--hr::before {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-hr.png);
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.character-sheet .inline-block {
+    display: inline-block;
+}
+
+.wounds-box {
+    padding-bottom: 10px;
+}
+
+.wounds-box > div {
+    padding: 5px 10px;
+}
+
+.wounds-box::before {
+    content: "";
+    display: block;
+}
+.wounds-box span:first-child {
+    margin-bottom: 10px;
+}
+.character-sheet .wounds-box span.wound-desc {
+    font-size: 10px;
+    line-height: 12px;
+    white-space: normal;
+    padding: 0;
+    padding-top: 3px;
+    text-transform: uppercase;
+	font-weight: bold;
+    text-align: center;
+}
+
+.checkbox-label {
+    flex-direction: column;
+	position: relative;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.checkbox-label.horizontal {
+    display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+    align-items: center;
+    padding: 5px 3px;
+}
+
+.checkbox-label.horizontal span {
+    padding-left: 6px;
+    display: inline-block;
+}
+
+.character-sheet .checkbox-label input {
+    position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.checkbox-label .checkmark {
+    height: 27px;
+	width: 27px;
+    background-image: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/checkbox.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+    position: relative;
+}
+
+.sheet-darkmode .checkbox-label .checkmark {
+    background-image: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-checkbox.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.checkbox-label .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+	top: 6px;
+	width: 5px;
+	height: 10px;
+	border: solid transparent;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.checkbox-label input:checked ~ .checkmark:after {
+	border-color: #000;
+}
+
+.sheet-darkmode .checkbox-label input:checked ~ .checkmark:after {
+	border-color: #fff;
+}
+
+.attributes-box {
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+}
+
+.attributes-box::before {
+    content: "";
+	display: block;
+	height: 2px;
+	width: auto;
+	background: #272626;
+	position: absolute;
+	z-index: 1;
+	top: 24px;
+	left: 0;
+	right: 10px;
+}
+
+.attributes-box .fieldset-labels {
+    margin-bottom: 5px;
+}
+
+.attributes-box__text {
+    padding-left: 45px;
+}
+
+.attributes-box__line {
+    position: relative;
+    margin-right: 11px;
+}
+
+.attributes-box__line-horizontal {
+    position: relative;
+}
+
+.attributes-box__line-horizontal::before, .attribute-box__line-horizontal-left::before {
+	content: "";
+	position: absolute;
+	height: 2px;
+	width: 11px;
+	background: #272626;
+	right: -11px;
+	top: 14px;
+	z-index: -1;
+}
+
+.attribute-box__line-horizontal-left {
+    position: relative;
+}
+
+.attribute-box__line-horizontal-left::before {
+    right: 100%;
+    left: -12px;
+	top: 18px;
+	width: 14px;
+}
+
+.attribute-box__line-horizontal-left button {
+    margin-top: 2px;
+}
+
+.attributes-box__line-ver {
+    position: relative;
+    padding-left: 12px;
+}
+
+.attributes-box__line-ver .repitem::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    bottom: 0;
+    left: -14px;
+	width: 2px;
+	background: #272626;
+}
+
+.attributes-box__line-ver .repitem:last-child::before {
+    bottom: calc(100% - 20px);
+}
+
+/* Roll Template */
+.sheet-rolltemplate-fatum .sheet-template-wrap {
+    background-color: #e9e4e3;
+    background-position: top center;
+    background-size: cover;
+    border: 0;
+    margin: 0 -8px;
+    margin-bottom: 15px;
+    font-family: 'Girassol', cursive;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    color: #333;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-wrap {
+    background: #000;
+    color: #fff;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-wrap::before, .sheet-rolltemplate-fatum .sheet-template-wrap::after {
+    content: "";
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/roll-template-line-top-left.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-wrap::before, .sheet-rolltemplate-fatum .sheet-template-wrap::after {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-roll-template-line-top-left.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-wrap::after {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/roll-template-line-bottom-right.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-wrap::after {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-roll-template-line-bottom-right.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-header,
+.sheet-rolltemplate-fatum .sheet-template-subtitle {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/roll-template-name.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 2px 5px;
+    line-height: 26px;
+    border: 0;
+    color: #231f20;
+    font-family: 'Girassol', cursive;
+    text-align: center;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-header,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-subtitle {
+    color: #fff;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-header,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-subtitle {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-roll-template-name.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-header {
+    background-color: #c2b59b;
+    font-size: 20px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-header a {
+    color: #231f20;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-header a {
+    color: #fff;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-hr {
+    font-size: 20px;
+	text-align: center;
+	line-height: 32px;
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/hr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin-bottom: 10px;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-hr {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-hr.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-grid {
+    text-align: left;
+    padding: 0 5px;
+    padding-bottom: 8px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-grid-item {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-grid-item-flex {
+    display: flex;
+    align-items: center;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-roll-between, 
+.sheet-rolltemplate-fatum .sheet-template-roll-success, 
+.sheet-rolltemplate-fatum .sheet-template-roll-fail {
+    height: 38px;
+	width: 38px;
+    border: 0;
+    border-radius: 7px;
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/dice-result.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 2px 1px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-between,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-success, 
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-fail {
+    background: url(https://raw.githubusercontent.com/guslarz-gusla/Fatum-RPG/main/Images/Dark/dark-dice-result.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-roll-between>span,
+.sheet-rolltemplate-fatum .sheet-template-roll-success>span,
+.sheet-rolltemplate-fatum .sheet-template-roll-fail>span {
+    width: 100%;
+    display: inline-block;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 38px;
+    background: transparent;
+    font-family: 'Girassol', cursive;
+    font-size: 26px;
+    color: #231f20;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-between>span,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-success>span,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-roll-fail>span {
+    color: #fff;
+    font-weight: 400;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-roll-fatum > div {
+    background-color: #756221;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-roll-fatum .sheet-template-roll-between>span {
+    color: #fff;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-roll-success>span {
+    display: block;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-roll-success>span, .sheet-rolltemplate-fatum .sheet-template-roll-fatum .sheet-template-roll-success>span {
+    color: #8dc63f;
+}
+.sheet-rolltemplate-fatum .sheet-template-roll-fail>span, .sheet-rolltemplate-fatum .sheet-template-roll-fatum .sheet-template-roll-fail>span {
+    color: #f1592a;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-roll-between>span.fullcrit,
+.sheet-rolltemplate-fatum .sheet-template-roll-between>span.fullfail {
+    border: 0;
+}
+
+.sheet-rolltemplate-fatum span.inlinerollresult.fullcrit {
+    border: 0;
+    counter-increment: hit;
+}
+
+.sheet-rolltemplate-fatum span.inlinerollresult.fullfail {
+    border: 0;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats > div:first-child {
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/roll-template-frame-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 7px 8px;
+    color: #231f20;
+    font-size: 16px;
+    width: 100%;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-dice-stats > div:first-child  {
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-roll-template-frame-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats span {
+    display: inline;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-weight: bold;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-dice-stats span {
+    font-weight: 400;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats > .sheet-template-dice-stats-value {
+    padding: 1px;
+    width: 45px;
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/roll-template-frame-2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-dice-stats > .sheet-template-dice-stats-value {
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-roll-template-frame-2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-without-bg > div, 
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-without-bg > div {
+    background: transparent;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-without-bg div span {
+    font-size: 15px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-template-dice-additional {
+    max-width: 224px;
+    margin: auto;
+    margin-top: -2px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-template-dice-additional > div:first-child {
+    padding: 3px 14px;
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/roll-template-name.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-template-dice-additional > div:first-child {
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/Velczer/CharacterSheets/master/Fatum/Images/Dark/dark-roll-template-name.png);
+    background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats.sheet-template-dice-additional span {
+    text-transform: uppercase;
+	font-size: 14px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats-value span {
+	background: #231f20;
+	width: 44px;
+	color: #fff;
+	display: flex;
+	height: 100%;
+	align-items: center;
+    justify-content: center;
+	font-weight: 400;
+	font-size: 22px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-additional .sheet-template-dice-stats-value {
+    width: 36px;
+}
+.sheet-rolltemplate-fatum .sheet-template-dice-additional .sheet-template-dice-stats-value span {
+    width: 34px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats-value.sheet-success span {
+    background-color: #8dc63f;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats-value.sheet-fail span {
+    background-color: #f1592a;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats-value.sheet-blue-bg span {
+    background-color: #0e76bc;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-stats-value.sheet-purple-bg span {
+    background-color: #9f1f63;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-actions>div {
+    flex: 1;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-dice-actions>div:last-child {
+    border-left: 1px solid transparent;
+}
+
+.sheet-rolltemplate-fatum .sheet-template-button a {
+    background: #231f20;
+    border: 0;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    padding: 5px 10px;
+}
+
+/* Repeating sections */
+.itemcontrol {
+    z-index: 20;
+}
+
+.fieldset-labels {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.fieldset-labels .mini-title {
+    justify-content: flex-start;
+    white-space: nowrap;
+    margin-right: 6px;
+    height: 26px;
+	font-size: 16px;
+}
+
+.repitem {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.repitem input {
+    width: 100%;
+    margin: 2px;
+	padding: 5px;
+	border: 2px solid #272626;
+	line-height: 24px;
+    background: transparent;
+}
+
+.repitem input:focus {
+    border: 2px solid #000;
+}
+
+.repitem .break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.character-sheet .repitem textarea {
+    border: 2px solid #272626;
+    padding: 4px 9px;
+    min-height: 34px;
+    width: 85%;
+}
+
+.repitem input[type="checkbox"] {
+    width: auto;
+    transform: scale(1.5);
+    flex: unset;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.rep-box-vertical .repitem {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.rep-box-vertical .repitem label {
+    margin-bottom: 0;
+}
+
+.rep-box-vertical .repitem input {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.rep-box-vertical .repitem textarea {
+    height: 78px;
+    border-radius: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
