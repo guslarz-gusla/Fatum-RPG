@@ -829,7 +829,11 @@
     const calcDice = async (results, fate_pool) => {
         var moreDice = 0;
         if (results.moreDice != null) {
-            moreDice = results.moreDice.result;
+            if (results.moreDice.result > 20) {
+                moreDice = 20;
+            } else {
+                moreDice = results.moreDice.result;
+            }
         }
 
         if (fate_pool <= moreDice) {
@@ -842,7 +846,11 @@
         var unusedAdditional = 0;
         var additionalDice = 0;
         if (results.additionalDice != null) {
-            additionalDice = results.additionalDice.result;
+            if (results.additionalDice.result > 20) {
+                additionalDice = 20;
+            } else {
+                additionalDice = results.additionalDice.result;
+            }
         }
 
         if (baseDice > 20) {
@@ -894,13 +902,21 @@
 
         var additionalThreshold = 0;
         if (results.additionalThreshold != null) {
-            additionalThreshold = results.additionalThreshold.result;
+            if (results.additionalThreshold.result > 20) {
+                additionalThreshold = 20;
+            } else {
+                additionalThreshold = results.additionalThreshold.result;
+            }
         }
     
         if (threshold < 5) {
             var largerThreshold = 0;
             if (results.largerThreshold != null) {
-                largerThreshold = results.largerThreshold.result;
+                if (results.largerThreshold.result > 20) {
+                    largerThreshold = 5;
+                } else {
+                    largerThreshold = results.largerThreshold.result;
+                }
             }
 
             if (fate_pool <= largerThreshold) {
